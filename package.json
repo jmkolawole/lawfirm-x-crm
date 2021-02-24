@@ -20,10 +20,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "luxon": "^1.26.0",
         "moment": "^2.29.1",
         "vue": "^2.6.12",
-        "vue-luxon": "^0.10.0",
         "vue-resource": "^1.5.1",
         "vue-router": "^3.5.1"
     }

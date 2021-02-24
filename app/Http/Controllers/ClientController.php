@@ -82,6 +82,7 @@ class ClientController extends Controller
        $this->client->profile_image = $file_name;
              
        $this->client->save();
+       //Send mail upon creating a profile
        Mail::to($this->client->email)->send(new \App\Mail\Client($this->client));
        
        if($profile_picture == null){
