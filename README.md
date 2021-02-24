@@ -8,16 +8,18 @@ A Customer Relationship Management Application built in Laravel / Vue Js.
 
 ## How to Set Up
 
-1. Clone the Repository
+1. Clone the Git Repository:
+
 Run ```git clone https://github.com/jmkolawole/lawfirm-x-crm.git```
 
-2. cd into the project directory
+2. cd into the project directory:
+
 Run ```cd lawfirm-x-crm```
 
-3. Copy .env.example file and rename as .env
+3. Copy .env.example file and rename as .env; 
 Alternatively, run ```cp .env.example .env```
 
-4. Edit database and mail credentials in your newly generated .env file
+4. Edit database and mail credentials in your newly generated/created .env file
 
 5. Run ```composer install``` to install all libraries and dependencies in the composer.lock file
 
