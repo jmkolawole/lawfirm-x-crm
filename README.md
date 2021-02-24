@@ -40,7 +40,7 @@ Alternatively, run ```cp .env.example .env```
 
 2. Run ```php schedule:run``` to run the ```send:reminder``` which sends prompting emails to clients without profile images every 3 days to submit one.
 
-3. Not that we are initiating the command above to run the command locally (on localhost). On a live server, we need to make the laravel scheduler start by itself by adding a cron job which executes every minute.
+3. Note that we are initiating the command above to run the command locally (on localhost). On a live server, we need to make the laravel scheduler start by itself by adding a cron job which executes every minute.
 So, on a live server, SSH into your server, cd into your project and run ```crontab -e```.
 This will open the server Crontab file, past the code below into the file, save and then exit.
 ``` * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1```
