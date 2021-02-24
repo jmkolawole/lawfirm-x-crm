@@ -18,8 +18,8 @@ class CreateClientsTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->string('prmary_legal_counsel');
-            $table->dateTime('dob');
+            $table->string('primary_legal_counsel');
+            $table->dateTime('dob')->nullable();
             $table->string('profile_image');
             $table->text('case_details');
             $table->timestamps();
