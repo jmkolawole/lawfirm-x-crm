@@ -124,7 +124,31 @@ class ClientController extends Controller
 
     }
 
+    public function getSingleClient($id=null){
+        $file_directory = $this->base_url.'/profile_images';
 
+        $findData = $this->client::find($id);
+
+        if(!$findData){
+            return response()->json([
+                'success' => false,
+                'message' => 'This client does not exist'
+             ], 500);
+        }
+
+
+        //If client actually exist
+        return response()->json([
+            'success' => true,
+            'data' => $findData,
+            'file_directory' => $file_directory
+
+         ], 200);
+
+    }
+
+
+    /*
     public function editSingleClient(Request $request, $id=null){
         $validator = Validator::make($request->all(),[
             'firstname' => 'required|string',
@@ -204,8 +228,11 @@ class ClientController extends Controller
    ], 200);
     }
 
+    */
 
 
+
+    /*
     public function deleteClient($id = null){
         $findData = $this->client::find($id);
 
@@ -230,30 +257,6 @@ class ClientController extends Controller
     }
 
 
-    public function getSingleClient($id=null){
-        $file_directory = $this->base_url.'/profile_images';
-
-        $findData = $this->client::find($id);
-
-        if(!$findData){
-            return response()->json([
-                'success' => false,
-                'message' => 'This client does not exist'
-             ], 500);
-        }
-
-
-        //If client actually exist
-        return response()->json([
-            'success' => true,
-            'data' => $findData,
-            'file_directory' => $file_directory
-
-         ], 200);
-
-    }
-
-
     public function searchClient($search=null){
         $file_directory = $this->base_url.'/profile_images';
 
@@ -266,6 +269,14 @@ class ClientController extends Controller
          ], 200);
 
     }
+
+
+    
+
+    */
+
+
+    
 
 
 

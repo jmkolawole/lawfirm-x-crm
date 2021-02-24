@@ -11,20 +11,20 @@
                             type="text"
                             class="form-control"
                             id="firstname"
-                            v-model="update.firstname"
+                            v-model="client.firstname"
                         />
                     </div>
 
                     <div class="form-group">
                         <label for="lastname">Last Name</label>
                         <input type="text" class="form-control" id="lastname"
-                        v-model="update.lastname" />
+                        v-model="client.lastname" />
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" 
-                        v-model="update.email"/>
+                        v-model="client.email"/>
                     </div>
 
                     <div class="form-group">
@@ -45,7 +45,7 @@
                             type="text"
                             class="form-control"
                             id="primary_legal_counsel"
-                            v-model="update.primary_legal_counsel"
+                            v-model="client.primary_legal_counsel"
                         />
                     </div>
 
@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label for="case_details">Case Details</label>
                         <textarea class="form-control" rows="10" id="case_details"
-                        v-model="update.case_details"></textarea>
+                        v-model="client.case_details"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary mb-2">Submit</button>
@@ -85,7 +85,7 @@ export default {
         return {
             client: {},
             file: null,
-            update: {}
+            
         };
     },
     methods : {
@@ -94,7 +94,7 @@ export default {
             this.$http
                 .get("http://localhost:8000/api/clients/view/" + id)
                 .then(function(response) {
-                    this.update = response.body.data;
+                    this.client= response.body.data;
                     
                 });
         },

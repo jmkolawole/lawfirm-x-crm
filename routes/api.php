@@ -21,8 +21,8 @@ use App\Http\Controllers\ClientController;
 Route::group(['middleware'=>['CORS'], 'prefix' => 'clients'], function() {
     Route::post('/add', [ClientController::class, 'add'])->name('add.client');
     Route::get('/view-all', [ClientController::class, 'getClients'])->name('all.clients');
-    Route::put('/update/{id}', [ClientController::class, 'editSingleClient'])->name('edit.client');
-    Route::delete('/delete/{id}', [ClientController::class, 'deleteClient'])->name('delete.client');
+    //Route::put('/update/{id}', [ClientController::class, 'editSingleClient'])->name('edit.client');
+    //Route::delete('/delete/{id}', [ClientController::class, 'deleteClient'])->name('delete.client');
     Route::get('/view/{id}', [ClientController::class, 'getSingleClient'])->name('single.client');
-    Route::get('/search/{search}', [ClientController::class, 'searchClient'])->name('search.client'); 
+    //Route::get('/search/{search}', [ClientController::class, 'searchClient'])->name('search.client'); 
 });
