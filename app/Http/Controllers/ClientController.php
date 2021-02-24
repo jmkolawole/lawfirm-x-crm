@@ -82,6 +82,7 @@ class ClientController extends Controller
        $this->client->profile_image = $file_name;
              
        $this->client->save();
+
        //Send mail upon creating a profile
        Mail::to($this->client->email)->send(new \App\Mail\Client($this->client));
        
@@ -100,6 +101,7 @@ class ClientController extends Controller
 
 
     
+    //This function fetches all the clients
     public function getClients(){
 
         $file_directory = $this->base_url.'/profile_images';
@@ -114,7 +116,7 @@ class ClientController extends Controller
         }
 
 
-        //If contact actually exist
+        //If client actually exist
         return response()->json([
             'success' => true,
             'data' => $data,
@@ -147,6 +149,9 @@ class ClientController extends Controller
 
     }
 
+
+
+    //This function edits the client. Commented out because it was not asked for
 
     /*
     public function editSingleClient(Request $request, $id=null){
@@ -232,6 +237,7 @@ class ClientController extends Controller
 
 
 
+    //Function that deletes a client
     /*
     public function deleteClient($id = null){
         $findData = $this->client::find($id);
@@ -255,28 +261,8 @@ class ClientController extends Controller
         }
     
     }
-
-
-    public function searchClient($search=null){
-        $file_directory = $this->base_url.'/profile_images';
-
-        $search_query = $this->client::Where("lastname","LIKE","%$search%")->orderBy("id","DESC")->get()->toArray();
-        return response()->json([
-            'success' => true,
-            'data' => $search_query,
-            'file_directory' => $file_directory
-
-         ], 200);
-
-    }
-
-
-    
-
     */
 
-
-    
 
 
 

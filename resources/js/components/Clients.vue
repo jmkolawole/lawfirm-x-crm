@@ -57,6 +57,7 @@ export default {
         };
     },
     methods: {
+        //Fetches all the clients from the api
         fetchClients() {
             this.$http
                 .get("http://localhost:8000/api/clients/view-all")
@@ -64,6 +65,7 @@ export default {
                     this.clients = response.body
                 });
         },
+        //This functions helps filter the list with the lastname
         filterBy(list, value){
             value = value.charAt(0).toUpperCase() + value.slice(1);
             return list.filter(function(client){
@@ -81,6 +83,7 @@ export default {
         this.fetchClients();
     },
     components: {
+        //Helps to alert on successful completion of operation
         Alert
     }
 };
