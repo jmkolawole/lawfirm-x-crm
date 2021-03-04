@@ -23,7 +23,9 @@ This will open the server Crontab file, paste the code below into the file, save
     */
     protected $commands = [
         //
-        Commands\MinuteUpdate::class,
+        Commands\SendReminder::class, //This is where the error is, I have corrected this and I have
+        //also removed the testing class
+
     ];
 
     /**
